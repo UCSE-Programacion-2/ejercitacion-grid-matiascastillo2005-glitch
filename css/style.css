@@ -25,4 +25,74 @@ img {
 /* TODO alumno:
    Aplicar Grid en .exercice y .excercice-incomplete
    con enfoque Mobile First + media queries.
+
 */
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa; 
+    padding: 20px;
+}
+
+.container {
+    max-width: 935px; 
+    margin: 0 auto;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #262626;
+}
+
+/* para Celulares */
+
+.exercice {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 20px;
+}
+
+.excercice-incomplete {
+    display: grid;
+    
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+}
+
+/* para Desktop */
+
+@media (min-width: 768px) { 
+    
+    .exercice {
+        
+        grid-template-columns: 1fr 1fr; 
+        align-items: start;
+        gap: 40px;
+    }
+
+    .excercice-incomplete {
+        
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
